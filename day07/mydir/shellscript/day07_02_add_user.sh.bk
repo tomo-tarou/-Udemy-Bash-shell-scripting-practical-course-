@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "ユーザー名を入力してください: "
+
+# $USER_NAME: 環境変数
+read USER_NAME
+
+# 環境変数のない場合
+if [ -z $USER_NAME ]; then
+  echo "ユーザー名が空です。"
+    exit 1
+  fi
+
+# ユーザーを追加
+useradd -m "$USER_NAME"
+
+echo "ユーザー $USER_NAMEを追加しました。"
